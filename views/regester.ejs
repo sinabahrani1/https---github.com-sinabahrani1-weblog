@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%=title  %> </title>
+    <link rel="stylesheet" href="/css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/signin.css">
+  </head>
+
+  <body class="text-center rtl">
+    
+  <form class="form-signin" action="/regester" method="post">  
+    <h1 class="h3 mb-3 fw-normal">ثبت نام کاربر </h1>
+
+    <%-include("../include/messeges.ejs")  %> 
+
+    <div class="form-floating">
+      <input   name="fullname" class="form-control mb-2" id="floatingInputfullname" placeholder="نام و نام خانوادگی ">
+    </div>
+    <div class="form-floating">
+      <input  name="email" type="email" class="form-control mb-2" id="floatingInput" placeholder="ایمیل">
+    </div>
+    <div class="form-floating">
+      <input  name="password" type="password" class="form-control mb-2" id="floatingPassword" placeholder="کلمه عبور ">
+    </div>
+    <div class="form-floating">
+      <input  name="cpassword" type="password" class="form-control mb-2" id="floatingPassword" placeholder=" تکرار کلمه عبور ">
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>  
+          <a href="/login">اکانت کاربری دارم</a>
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">ثبت نام </button>
+  </form>
+
+
+
+     <!-- JavaScript Bundle with Popper -->
+
+     <script src="/js/jquery.slim.min.js"></script>
+     <script src="/js/bootstrap.min.js"></script>
+     
+    </body>
+</html>

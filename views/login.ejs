@@ -1,0 +1,41 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%=pageTitle  %> </title>
+    <link rel="stylesheet" href="/css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/signin.css">
+  </head>
+
+  <body class="text-center rtl">
+    
+
+  <form class="form-signin " action="/login" method="post">
+    <h1 class="h3 mb-3 fw-normal">ورود به داشبورد</h1>
+ 
+    <%-include("../include/bbb.ejs") %>  
+
+    <div class="form-floating">
+        
+      <input required name="email" type="email" class="form-control" id="floatingInput" placeholder="sinabahrani@gmail.com">
+    </div>
+    <div class="form-floating">
+      <input required name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> منو به خاطر بسپار
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-success" type="submit">وارد شدن </button>
+  </form>
+
+
+  <script src="/js/jquery.slim.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
