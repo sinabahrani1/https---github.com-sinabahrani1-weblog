@@ -28,7 +28,7 @@ const errors = []
             }
             const hash = await bcript.hash(password , 10)
             await user.create({fullname , email , password : hash})
-            req.flash("msg" , "ثبت نام موفقیت امیز بود ")
+            req.flash("error" , "ثبت نام موفقیت امیز بود ")
             res.redirect("/login")
         } catch (err) {
             console.log(err)

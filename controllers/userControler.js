@@ -9,3 +9,8 @@ exports.Handellogin = (req , res , next) =>{
         failureFlash:"کاربر گرامی ایمیل یا کلمه عبور اشتباه است ",
     })(req , res , next)
 }
+exports.logout = (req , res )=>{
+    req.logout()
+    req.flash("error" , "خروج موفقیت امیز بود ")
+    res.redirect("/login")
+} 
