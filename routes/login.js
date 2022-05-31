@@ -21,3 +21,4 @@ router.get("/logout" , authenticate,usercontroler.logout)
 
 
 module.exports = router;
+

@@ -1,16 +1,18 @@
 const  path = require('path');
-
+const mongoo = require('mongoose');
 const express = require('express');
 const flash = require('connect-flash');
-const sesion = require('express-session');
-
 const bodyParser = require('body-parser');
 const pasport = require('passport');
+const sesion = require('express-session');
+const MongoStore = require('connect-mongo');
+
 const conectDB = require('./config/database');
 const indexRoutes = require("./routes/index");
 const loginRoute = require('./routes/login');
 const regesterRoute = require('./routes/regester');
 const dashbordRoute = require('./routes/dashbord');
+const { session } = require('passport');
 
   
 conectDB();
@@ -33,10 +35,10 @@ app.use(express.static(path.join(__dirname, "public")));
 //*ssesion 
 app.use(sesion({
     secret :"secret",
-    cookie : {maxAge : 60000},
     resave:false,
     saveUninitialized :false,
-}))
+    store: MongoStore.create({mongoUrl:'mongodb://localhost/session'})
+  }))
 app.use(pasport.initialize())
 app.use(pasport.session())
 
