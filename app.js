@@ -7,12 +7,13 @@ const pasport = require('passport');
 const sesion = require('express-session');
 const MongoStore = require('connect-mongo');
 
+//! بین ماچول ها و روت ها
+
 const conectDB = require('./config/database');
 const indexRoutes = require("./routes/index");
 const loginRoute = require('./routes/login');
 const regesterRoute = require('./routes/regester');
 const dashbordRoute = require('./routes/dashbord');
-const { session } = require('passport');
 
   
 conectDB();
