@@ -20,6 +20,11 @@
     margin-right: 102px;
     margin-left: inherit;
 }
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 11px;
+}
   </style>
  <body>
 
@@ -53,11 +58,13 @@
 				<!-- / enter password-->
 
 				<!-- login button-->
-        <hr>
-        <div class="rtl">
-        <p>منو به خاطر بسپار</p><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
-        </div>
-        <hr>
+ 
+				<div class="checkbox mx-3">
+					<label>
+						<input name="remember" type="checkbox" value="remmember-me">من را به خاطر بسپار 
+					</label>
+				</div>
+
 				<div class="container-login100-form-btn">
 					<button type="submit" class="login100-form-btn">ورود</button>
 				</div>

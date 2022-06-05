@@ -15,7 +15,7 @@ router.get("/login",(req,res)=>{
     }) 
 });
 
-router.post("/login" , usercontroler.Handellogin)
+router.post("/login" , usercontroler.Handellogin , usercontroler.rememberme)
 
 router.get("/logout" , authenticate,usercontroler.logout)
 
