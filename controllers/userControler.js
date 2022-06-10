@@ -1,6 +1,6 @@
 const passport = require("passport")
-const bcript = require('bcryptjs');
-const User = require('../modell/weblog');
+const bcript   = require('bcryptjs');
+const User     = require('../modell/weblog');
 
 exports.Handellogin = (req , res , next) =>{
     passport.authenticate("local" ,{
@@ -10,11 +10,12 @@ exports.Handellogin = (req , res , next) =>{
     })(req , res , next)
 }
 
-exports.rememberme = (req , res )=>{
-    if(req.body.remember){
-        req.session.cookie.originalMaxAge = 24*60*60 *1000;
-    }else{
-        req.session.cookie.expire = null;
+exports.rememberme = (req , res ) =>{
+    if (req.body.remember) {
+        req.session.cookie.originalMaxAge = 24 * 60 * 60 * 1000
+    }
+    else{
+        req.session.cookie.expire = null
     }
     res.redirect("/dashbord")
 }
