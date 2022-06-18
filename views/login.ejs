@@ -12,7 +12,7 @@
     <link type="text/css" href="css/select2.min.css" rel="stylesheet" />
     <link type="text/css" href="css/util.css" rel="stylesheet" />
     <link type="text/css" href="css/style.css" rel="stylesheet" />
-    
+	<script src="https://www.google.com/recaptcha/api.js?hl=fa" async defer></script>
   </head>
   <style>
     .rtl .form-check-input {
@@ -58,14 +58,16 @@ input[type=checkbox], input[type=radio] {
 				<!-- / enter password-->
 
 				<!-- login button-->
- 
-				<div class="checkbox mx-3">
-					<label>
-						<input name="remember" type="checkbox" value="remmember-me">من را به خاطر بسپار 
-					</label>
-				</div>
+					<div class="checkbox mx-3">
+						<label>
+							<input name="remember" type="checkbox" value="remmember-me">من را به خاطر بسپار 
+						</label>
+					</div>
 
 				<div class="container-login100-form-btn">
+					<div class="form-group">
+						<div class="g-recaptcha" data-sitekey="6Ld0unwgAAAAADrl8Q8yMs9trF6LKhztXqPUrPhK"></div>
+					</div>
 					<button type="submit" class="login100-form-btn">ورود</button>
 				</div>
 				<!-- / login button -->
