@@ -1,28 +1,25 @@
 const passport = require("passport")
 const bcript   = require('bcryptjs');
+const bodyParser = require('body-parser');
 const User     = require('../modell/weblog');
+const fetch = require('node-fetch');
 
-exports.Handellogin = (req , res , next) =>{
-        console.log(req.body["g-recaptcha-response"])
 
-    if (!req.body["g-recaptcha-response"]) {
-        req.flash(("error"),"شما من ربات نیستم رو فعال نکردین")
+exports.Handellogin =  (req , res , next) =>{
+
+    if(!req.body["g-recaptcha-response"]){
+        req.flash("error","من ربات نیستم را فعال کنید")
         return res.redirect("/login")
     }
 
-    const secretky = process.env.CAPTCHA;
-    const verifyurl = `https://google.com/recaptcha/api/siteverify?secret=${secretky}&response=${req.body["g-recaptcha-response"]}
-    &remoteip=${req.connection.remoteAddress}`
-    console.log(req.connection.remoteAddress)
-
-
-
     passport.authenticate("local" ,{
-       // successRedirect:"/dashbord",
-        failureRedirect:"/login", 
-        failureFlash:"کاربر گرامی ایمیل یا کلمه عبور اشتباه است ",
-    })(req , res , next)
-}
+        // successRedirect:"/dashbord",
+         failureRedirect:"/login", 
+         failureFlash:"کاربر گرامی ایمیل یا کلمه عبور اشتباه است ",
+     })(req , res , next)
+    
+    
+};
 
 exports.rememberme = (req , res ) =>{
     if (req.body.remember) {

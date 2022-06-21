@@ -27,7 +27,7 @@ require('./pasport');
 
 //*body - parser
 app.use(bodyParser.urlencoded({ extended: false }))
-
+app.use(bodyParser.json())
  
 //* View Engine
 app.set("view engine", "ejs");
