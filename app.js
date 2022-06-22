@@ -15,6 +15,7 @@ const indexRoutes = require("./routes/index");
 const loginRoute = require('./routes/login');
 const regesterRoute = require('./routes/regester');
 const dashbordRoute = require('./routes/dashbord');
+const addpost = require('./routes/abbpost');
 
   
 conectDB();
@@ -55,6 +56,7 @@ app.use(indexRoutes);
 app.use(loginRoute);
 app.use(dashbordRoute);
 app.use(regesterRoute);
+app.use(addpost)
 
 
 

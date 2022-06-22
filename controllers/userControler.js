@@ -21,6 +21,7 @@ exports.Handellogin =  (req , res , next) =>{
     
 };
 
+
 exports.rememberme = (req , res ) =>{
     if (req.body.remember) {
         req.session.cookie.originalMaxAge = 24 * 60 * 60 * 1000

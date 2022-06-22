@@ -1,30 +1,28 @@
-const mongoose =  require('mongoose');
-
-const blogschema = new mongoose.Schema({
+const mongoose = require('mongoose');
+const blogschema  = new mongoose.Schema({
     title:{
-        type: String, 
-        required : true,
-        trim: true,
-        minlength : 5,
-        maxlength:255,
+        type:String,
+        required:true,
+        trim:true,
+        minlength:10,
+        maxlength:300,
     },
     body:{
-        type : String,
+        type:String,
         required:true,
     },
     status:{
         type:String,
         default:"عمومی",
-        enum : ["عمومی", "خصوصی"],
+        enum:["عمومی","خصوصی"]
     },
-    users:{
-        type: mongoose.Schema.Types.ObjectId,
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
         ref:"User"
     },
-    CreatedAt :{
-        type:Date, 
-        default : Date.now
+    createdAt:{
+        type:Date,
+        default:Date.now
     }
-})
-
-module.exports = mongoose.model("blog" , blogschema) 
+}) 
+module.exports = mongoose.model("blog",blogschema)

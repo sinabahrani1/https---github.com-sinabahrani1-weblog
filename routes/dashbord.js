@@ -10,4 +10,10 @@ router.get("/dashbord" ,authenticate, (req,res)=>{
     })
 })
 
+router.get("/dashbord/add-post",(req , res)=>{
+    res.render("abbpost",{
+        titl:"ایجاد پست "
+    })
+})
+
 module.exports = router; 
