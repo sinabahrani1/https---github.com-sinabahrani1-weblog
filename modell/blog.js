@@ -14,7 +14,7 @@ const blogschema  = new mongoose.Schema({
     status:{
         type:String,
         default:"عمومی",
-        enum:["عمومی","خصوصی"]
+        enum:["عمومی","خصوصی"] 
     },
     user:{
         type:mongoose.Schema.Types.ObjectId,

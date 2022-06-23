@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap-rtl.css">
+    <script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
     <title><%=titl  %> </title>
 </head>
 <body class="rtl">
     <h3 class="mt-2 text-center">ساخت پست جدید</h3>
-    <h3 class="mt-2 text-center"><%=fullname  %> </h3>
-<div class="d-flex align-items-center justify-content-center">
+    <center>
+        <span style="color: red; " class="mt-2 text-center">پست خود را ایجاد کنید :  <%=fullname  %></span>
+    </center>
+    <hr>
+    <div class="d-flex align-items-center justify-content-center">
     <form action="/add-post" class="w-50" method="POST">
         <div class="form-group">
             <label for="title">عنوان پست</label>
@@ -37,9 +41,17 @@
 
         <div class="row">
             <input type="submit" value="ساخت پست" class="btn btn-success m-2" />
-            <a href="/dashboard" class="btn btn-warning m-2">انصراف</a>
+            <a href="/add-post" class="btn btn-warning m-2">انصراف</a>
+            <a   class="btn btn-light m-2" href="/dashbord">داشبورد</a>
         </div>
+        
     </form>
+ <script>
+       CKEDITOR.replace("body" ,{
+        language:"fa"
+    })
+ </script>
+
 </div>
 
 <script src="/js/bootstrap.js"></script>

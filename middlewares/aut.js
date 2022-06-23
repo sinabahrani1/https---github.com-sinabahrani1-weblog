@@ -8,8 +8,10 @@ const blog = require('../modell/blog');
 
 exports.createpost = async(req , res)=>{
     try {
-        console.log("miyoooo")
+        await blog.create({... req.body , user:req.user.id})
+        
         res.redirect("/dashbord")
+        console.log(req.body)
     } catch (err) {
         console.log(err)
     }
